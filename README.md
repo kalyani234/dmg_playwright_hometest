@@ -30,19 +30,17 @@ Both test suites include:
 - **Reports**: HTML reports with videos & traces enabled
 
 ---
-# Run all tests (both suites & both projects)
-npx playwright test
 
-# Run only Suite 1 (iNews – Mobile Chrome UK)
-npx playwright test tests/inews.spec.js --project="Mobile Chrome - ts1" --headed
+### helpers/
+- Contains **utility functions** used across test files.  
+- Example: `gaUtils.js` → has a function `waitForGAEvent()` to **wait for Google Analytics requests** and parse query parameters.
 
-# Run only Suite 2 (New Scientist – Desktop Chrome)
-npx playwright test tests/newscientist.spec.js --project="Desktop Chome - ts2" --headed
+### tests/
+- Contains **test suites** written in Playwright.  
+- `inews.spec.js`: Suite 1 tests GA tracking before/after consent modal.  
+- `newscientist.spec.js`: Suite 2 tests theme switching and persistence.  
 
-# Open HTML test report
-npx playwright show-report playwright-reports
-
-
+---
 
 # Install Playwright browsers
 npx playwright install
