@@ -42,5 +42,15 @@ Both test suites include:
 
 ---
 
-# Install Playwright browsers
-npx playwright install
+# Run all tests (both suites & both projects)
+npx playwright test
+
+# Run only Suite 1 (iNews – Mobile Chrome UK)
+npx playwright test tests/inews.spec.js --project="Mobile Chrome - ts1" --headed
+
+# Run only Suite 2 (New Scientist – Desktop Chrome)
+npx playwright test tests/newscientist.spec.js --project="Desktop Chrome -ts2" --headed
+
+# Open HTML test report
+npx playwright show-report playwright-reports
+
